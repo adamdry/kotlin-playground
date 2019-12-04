@@ -84,11 +84,20 @@ class VarianceTest {
         // in and out
         fun invarianceExample() {
 
+            val org1 = Organism("Dave(Org)", isAlive = true)
+            val mam1 = Mammal("Tim(Mam)", isAlive = true, isFurry = false)
+            val hum1 = Human("Grumio(Hum)", isAlive = true, nationalInsuranceNum = "123")
+
             val mamList: ListPlusPlus<Mammal> = ListPlusPlus<Mammal>()
 
             // can't do either of these, it's mammals all the way down
             // val orgList: ListPlusPlus<Organism> = mamList
             // val humList: ListPlusPlus<Human> = mamList
+
+            // can't do this as not all organisms are mammals
+            //mamList.addItem(org1)
+            mamList.addItem(mam1)
+            mamList.addItem(hum1)
 
         }
 
